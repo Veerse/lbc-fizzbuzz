@@ -40,17 +40,15 @@ To use the FizzBuzz API, send a GET request to the /fizzbuzz endpoint with a JSO
 
 ### Example
 
-    GET {Host}/fizzbuzz HTTP/1.1
-    Host: localhost:{portnumber} (default port is 8090)
-    Content-Type: application/json
-
-    {
+    curl --location --request GET 'http://localhost:8090/fizzbuzz' \
+        --header 'Content-Type: application/json' \
+        --data-raw '{
+        "string1": "fizz",
+        "string2": "buzz",
         "int1": 3,
         "int2": 5,
-        "string1": "Fizz",
-        "string2": "Buzz",
         "limit": 15
-    }
+    }'
 
 The response will be a string such as :
 
