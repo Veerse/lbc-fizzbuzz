@@ -32,7 +32,7 @@ func (a *API) Initialize() {
 	a.router.GET("/fizzbuzz", a.GetFizzBuzz)
 }
 
-// Run runs the API on default port (8080).
+// Run runs the API on port 8090.
 func (a *API) Run() error {
-	return a.router.Run()
+	return a.router.Run("localhost:8090")
 }
