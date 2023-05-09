@@ -27,12 +27,12 @@ func NewAPI(log logrus.FieldLogger, fbService services.IFizzBuzzService) *API {
 
 // Initialize initializes the API endpoints.
 func (a *API) Initialize() {
-	gin.SetMode(gin.ReleaseMode)
-
 	a.router.GET("/fizzbuzz", a.GetFizzBuzz)
 }
 
 // Run runs the API on port 8090.
 func (a *API) Run() error {
+	a.log.Info("starting server")
+
 	return a.router.Run("localhost:8090")
 }

@@ -4,8 +4,13 @@ import (
 	"lbc-fizzbuzz/internal/api"
 	"lbc-fizzbuzz/internal/services"
 
+	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
 )
+
+func init() {
+	gin.SetMode(gin.ReleaseMode)
+}
 
 func main() {
 	log := logrus.New()
