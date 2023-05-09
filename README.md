@@ -11,9 +11,9 @@ This project implements a REST API endpoint for the FizzBuzz problem. Given two 
 
 ### Run on your local machine
 
-To run the FizzBuzz API on your locale machine, run the command `make run`. Application will be run on port `8080`.
+To run the FizzBuzz API on your locale machine, run the command `make run`. Application will be run on port `8090`.
 
-The FizzBuzz endpoint should now be accessible at `http://localhost:8080/fizzbuzz`.
+The FizzBuzz endpoint should now be accessible at `http://localhost:8090/fizzbuzz`.
 
 ### Run in Docker
 
@@ -23,7 +23,7 @@ To run the FizzBuzz API with Docker, you'll need to have Go and Docker installed
 2. Build the Docker image by running `make docker-build DOCKER_TAG={tag_name}`
 3. Run the Docker container by running `make docker-run DOCKER_PORT={port_number} DOCKER_TAG={tagname}`
 
-By default `DOCKER_PORT` will be equal to **8080** and `DOCKER_TAG` will be equal to **latest**.
+By default `DOCKER_PORT` will be equal to **8090** and `DOCKER_TAG` will be equal to **latest**.
 
 The FizzBuzz endpoint should now be accessible at `http://localhost:{port_number}/fizzbuzz`.
 
@@ -41,7 +41,7 @@ To use the FizzBuzz API, send a GET request to the /fizzbuzz endpoint with a JSO
 ### Example
 
     GET {Host}/fizzbuzz HTTP/1.1
-    Host: localhost:{portnumber} (default port is 8080)
+    Host: localhost:{portnumber} (default port is 8090)
     Content-Type: application/json
 
     {

@@ -1,7 +1,7 @@
 APP_NAME=fizzbuzz
 BUILD_DIR=./build
 DOCKER_TAG ?= latest
-DOCKER_PORT ?= 8080
+DOCKER_PORT ?= 8090
 
 .PHONY: build run test clean docker-build docker-run lint
 
@@ -9,7 +9,7 @@ docker-build:
 	docker build -t $(APP_NAME):$(DOCKER_TAG) .
 
 docker-run:
-	docker run -p $(DOCKER_PORT):8080 $(APP_NAME):$(DOCKER_TAG)
+	docker run -p $(DOCKER_PORT):8090 $(APP_NAME):$(DOCKER_TAG)
 
 build:
 	mkdir -p $(BUILD_DIR)
