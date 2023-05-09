@@ -1,0 +1,25 @@
+package parameters_test
+
+import (
+	"github.com/stretchr/testify/assert"
+	"lbc-fizzbuzz/internal/api/parameters"
+	"lbc-fizzbuzz/internal/models"
+	"testing"
+)
+
+func TestFizzBuzzRequestBody_MapToFizzBuzzModel(t *testing.T) {
+	assert.Equal(t, parameters.FizzBuzzRequestBody{
+		String1: "foo",
+		String2: "bar",
+		Int1:    1,
+		Int2:    2,
+		Limit:   3,
+	}.MapToFizzBuzzModel(),
+		&models.FizzBuzz{
+			String1: "foo",
+			String2: "bar",
+			Int1:    1,
+			Int2:    2,
+			Limit:   3,
+		})
+}
