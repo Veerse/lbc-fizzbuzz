@@ -22,13 +22,14 @@ func (s *FizzBuzzService) DoFizzBuzz(fb *models.FizzBuzz) string {
 	var result string
 
 	for i := 1; i <= fb.Limit; i++ {
-		if i%fb.Int1 == 0 && i%fb.Int2 == 0 {
+		switch {
+		case i%fb.Int1 == 0 && i%fb.Int2 == 0:
 			result = result + fb.String1 + fb.String2 + ","
-		} else if i%fb.Int1 == 0 {
+		case i%fb.Int1 == 0:
 			result = result + fb.String1 + ","
-		} else if i%fb.Int2 == 0 {
+		case i%fb.Int2 == 0:
 			result = result + fb.String2 + ","
-		} else {
+		default:
 			result = result + strconv.Itoa(i) + ","
 		}
 	}

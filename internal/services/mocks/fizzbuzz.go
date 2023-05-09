@@ -35,10 +35,10 @@ func (m *MockIFizzBuzzService) EXPECT() *MockIFizzBuzzServiceMockRecorder {
 }
 
 // DoFizzBuzz mocks base method.
-func (m *MockIFizzBuzzService) DoFizzBuzz(arg0 *models.FizzBuzz) []string {
+func (m *MockIFizzBuzzService) DoFizzBuzz(arg0 *models.FizzBuzz) string {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "DoFizzBuzz", arg0)
-	ret0, _ := ret[0].([]string)
+	ret0, _ := ret[0].(string)
 	return ret0
 }
 

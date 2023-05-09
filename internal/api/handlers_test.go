@@ -3,17 +3,18 @@ package api_test
 import (
 	"bytes"
 	"encoding/json"
-	"lbc-fizzbuzz/internal/api"
-	mock_services "lbc-fizzbuzz/internal/services/mocks"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"lbc-fizzbuzz/internal/api"
+	"lbc-fizzbuzz/internal/api/parameters"
+	mock_services "lbc-fizzbuzz/internal/services/mocks"
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang/mock/gomock"
 	"github.com/sirupsen/logrus/hooks/test"
 	"github.com/stretchr/testify/assert"
-	"lbc-fizzbuzz/internal/api/parameters"
 )
 
 func TestAPI_GetFizzBuzz(t *testing.T) {
@@ -59,11 +60,11 @@ func TestAPI_GetFizzBuzz(t *testing.T) {
 			c, _ := gin.CreateTestContext(w)
 
 			reqBodyJSON, _ := json.Marshal(struct {
-				foo int
-				bar int
+				Foo int `json:"foo"`
+				Bar int `json:"bar"`
 			}{
-				foo: 10,
-				bar: 20,
+				Foo: 10,
+				Bar: 20,
 			})
 
 			c.Request, _ = http.NewRequest(http.MethodGet, "/fizzbuzz", bytes.NewBuffer(reqBodyJSON))

@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/sirupsen/logrus"
 	"lbc-fizzbuzz/internal/api"
 	"lbc-fizzbuzz/internal/services"
+
+	"github.com/sirupsen/logrus"
 )
 
 func main() {
