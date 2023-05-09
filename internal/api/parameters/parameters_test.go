@@ -1,10 +1,12 @@
 package parameters_test
 
 import (
-	"github.com/stretchr/testify/assert"
+	"testing"
+
 	"lbc-fizzbuzz/internal/api/parameters"
 	"lbc-fizzbuzz/internal/models"
-	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestFizzBuzzRequestBody_MapToFizzBuzzModel(t *testing.T) {

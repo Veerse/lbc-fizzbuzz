@@ -1,13 +1,14 @@
 package api
 
 import (
-	"github.com/go-playground/validator/v10"
-	"github.com/sirupsen/logrus"
-	"lbc-fizzbuzz/internal/api/helpers"
 	"net/http"
 
-	"github.com/gin-gonic/gin"
+	"lbc-fizzbuzz/internal/api/helpers"
 	"lbc-fizzbuzz/internal/api/parameters"
+
+	"github.com/gin-gonic/gin"
+	"github.com/go-playground/validator/v10"
+	"github.com/sirupsen/logrus"
 )
 
 func (a *API) GetFizzBuzz(c *gin.Context) {
@@ -19,6 +20,8 @@ func (a *API) GetFizzBuzz(c *gin.Context) {
 	}
 
 	if err := a.val.Struct(b); err != nil {
+		// Type assertion on "err" won't fail here because struct method returns an assertable error to
+		// type validator.ValidationErrors.
 		c.JSON(http.StatusBadRequest, helpers.ParseValidationErrors(err.(validator.ValidationErrors)))
 		return
 	}

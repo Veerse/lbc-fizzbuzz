@@ -11,7 +11,7 @@ This project implements a REST API endpoint for the FizzBuzz problem. Given two 
 
 ### Run on your local machine
 
-To run the FizzBuzz API on your locale machine, run the command `make build` then run your executable within `./build`. Application will be run on port `8080`.
+To run the FizzBuzz API on your locale machine, run the command `make run`. Application will be run on port `8080`.
 
 The FizzBuzz endpoint should now be accessible at `http://localhost:8080/fizzbuzz`.
 
@@ -40,8 +40,8 @@ To use the FizzBuzz API, send a GET request to the /fizzbuzz endpoint with a JSO
 
 ### Example
 
-    GET /fizzbuzz HTTP/1.1
-    Host: localhost:<portnumber>
+    GET {Host}/fizzbuzz HTTP/1.1
+    Host: localhost:{portnumber} (default port is 8080)
     Content-Type: application/json
 
     {
@@ -59,3 +59,9 @@ The response will be a string such as :
 ### Tests
 
 To run unit tests use command `make test`.
+
+### Lint
+
+To run linter use command `make lint`.
+
+Note that  Docker is required as linter is run within a Docker container.

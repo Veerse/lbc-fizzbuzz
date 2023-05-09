@@ -1,10 +1,11 @@
 package api
 
 import (
+	"lbc-fizzbuzz/internal/services"
+
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 	"github.com/sirupsen/logrus"
-	"lbc-fizzbuzz/internal/services"
 )
 
 type API struct {
@@ -14,7 +15,7 @@ type API struct {
 	val      *validator.Validate
 }
 
-// NewAPI returns an instance of API
+// NewAPI returns an instance of API.
 func NewAPI(log logrus.FieldLogger, fbService services.IFizzBuzzService) *API {
 	return &API{
 		log:      log,
@@ -24,14 +25,14 @@ func NewAPI(log logrus.FieldLogger, fbService services.IFizzBuzzService) *API {
 	}
 }
 
-// Initialize initializes the API endpoints
+// Initialize initializes the API endpoints.
 func (a *API) Initialize() {
 	gin.SetMode(gin.ReleaseMode)
 
 	a.router.GET("/fizzbuzz", a.GetFizzBuzz)
 }
 
-// Run runs the API on default port (8080)
+// Run runs the API on default port (8080).
 func (a *API) Run() error {
 	return a.router.Run()
 }

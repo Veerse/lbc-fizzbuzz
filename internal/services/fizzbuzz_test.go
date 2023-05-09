@@ -1,12 +1,13 @@
 package services_test
 
 import (
-	"lbc-fizzbuzz/internal/models"
 	"reflect"
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	"lbc-fizzbuzz/internal/models"
 	"lbc-fizzbuzz/internal/services"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestNewFizzBuzzService(t *testing.T) {
